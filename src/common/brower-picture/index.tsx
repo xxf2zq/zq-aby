@@ -59,21 +59,29 @@ const index = memo((props: IProps) => {
           </div>
         </div>
         <div className="list">
-          <Dots selectindex={currentindex}>
-            {imgs.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  className={classNames('item', {
-                    active: index === currentindex,
-                  })}
-                  onClick={() => setcurrindex(index)}
-                >
-                  <img src={item} alt=""></img>
-                </div>
-              )
-            })}
-          </Dots>
+          <CSSTransition
+            timeout={500}
+            in={showlist}
+            classNames="zq"
+            unmountOnExit={true}
+            appear
+          >
+            <Dots selectindex={currentindex}>
+              {imgs.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    className={classNames('item', {
+                      active: index === currentindex,
+                    })}
+                    onClick={() => setcurrindex(index)}
+                  >
+                    <img src={item} alt=""></img>
+                  </div>
+                )
+              })}
+            </Dots>
+          </CSSTransition>
         </div>
       </div>
       <div className="right-arr item" onClick={() => handpicindex(true)}>

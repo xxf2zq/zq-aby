@@ -1,32 +1,90 @@
 import styled from 'styled-components'
 
 export const CenterWrapper = styled.div`
-  width: 300px;
-  height: 48px;
-  border: 1px solid #ccc;
-  border-radius: 24px;
   position: relative;
   display: flex;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 700;
-  box-sizing: border-box;
-  cursor: pointer;
-  span {
-    margin-left: 10px;
-  }
-  .search {
+  justify-content: center;
+  height: 48px;
+
+  .search-bar {
     position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background-color: ${(prop) => prop.theme.color.primaryColor};
-    border-radius: 50%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    color: #fff;
+    width: 300px;
+    height: 48px;
+    box-sizing: border-box;
+    padding: 0 8px;
+    border: 1px solid #ddd;
+    border-radius: 24px;
+    cursor: pointer;
+    ${(props) => props.theme.mixin.boxShadow};
+
+    .text {
+      padding: 0 16px;
+      color: #222;
+      font-weight: 600;
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      color: #fff;
+      background-color: ${(props) => props.theme.color.primaryColor};
+    }
+  }
+
+  .search-detail {
+    position: relative;
+    transform-origin: 50% 0;
+    will-change: transform, opacity;
+
+    .infos {
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .detail-exit {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+
+  .detail-exit-active {
+    transition: all 250ms ease;
+    transform: scale(0.35, 0.727273) translateY(-58px);
+    opacity: 0;
+  }
+
+  .detail-enter {
+    transform: scale(0.35, 0.727273) translateY(-58px);
+    opacity: 0;
+  }
+
+  .detail-enter-active {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    transition: all 250ms ease;
+  }
+
+  .bar-enter {
+    transform: scale(2.85714, 1.375) translateY(58px);
+    opacity: 0;
+  }
+
+  .bar-enter-active {
+    transition: all 250ms ease;
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+
+  .bar-exit {
+    opacity: 0;
   }
 `

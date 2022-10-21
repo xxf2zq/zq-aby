@@ -13,6 +13,7 @@ import type { CarouselRef } from 'antd/lib/carousel'
 import { RoomWrapper } from './style'
 import LazyLoad from 'react-lazyload'
 import { Rating } from '@mui/material'
+import React from 'react'
 const index = memo((props: IProps) => {
   const dispatch = useDispatch<any>()
   const swiperref = useRef<CarouselRef>(null)
@@ -56,7 +57,7 @@ const index = memo((props: IProps) => {
                 <img
                   src={item}
                   alt=""
-                  key={index}
+                  key={item}
                   className="img"
                   onClick={godetail}
                 />
@@ -88,8 +89,15 @@ const index = memo((props: IProps) => {
         </div>
       ) : (
         <LazyLoad
-          offset={200}
-          placeholder={<img width="100%" className="bg"></img>}
+          placeholder={
+            <img
+              width="100%"
+              height="100%"
+              key={picture_url}
+              src={require('../../assets/img/loadinggif.gif')}
+              alt="logo"
+            />
+          }
         >
           <img src={picture_url} alt="" className="img" />
         </LazyLoad>

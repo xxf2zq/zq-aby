@@ -6,12 +6,10 @@ const index = memo((props: IProps) => {
   const { selectindex } = props
   useEffect(() => {
     const divel = IditionRef.current?.children[selectindex] as HTMLElement
-    console.log(divel)
     const offsetleft = divel.offsetLeft
     const elclientwidth = divel.clientWidth
     const contentclientwidth = IditionRef.current!.clientWidth
     const contentscrollwidth = IditionRef.current!.scrollWidth
-    console.log(offsetleft)
     let dispatnce = offsetleft + elclientwidth / 2 - contentclientwidth / 2
     const totaldistance = contentscrollwidth - contentclientwidth
     if (dispatnce < 0) dispatnce = 0

@@ -7,7 +7,10 @@ export const RightWrapper = styled.div`
   margin-right: 20px;
   font-weight: 600;
   font-size: 14px;
+  flex: 1;
+  justify-content: flex-end;
   color: ${(props) => props.theme.color.textColor};
+  color: ${(props) => (!props.theme.isAlpha ? '#000' : '#fff')};
   .btns {
     display: flex;
     align-items: center;

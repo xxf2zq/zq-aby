@@ -12,13 +12,13 @@ import { Suspense } from 'react'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
-  <Suspense fallback={<h3>loading....</h3>}>
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <Provider store={store}>
+  <Provider store={store}>
+    <Suspense fallback={<h3>loading....</h3>}>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
           <App />
-        </Provider>
-      </ThemeProvider>
-    </BrowserRouter>
-  </Suspense>
+        </ThemeProvider>
+      </BrowserRouter>
+    </Suspense>
+  </Provider>
 )

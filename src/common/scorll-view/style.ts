@@ -31,7 +31,6 @@ export const ScrollWrapper = styled.div`
   }
   .right {
     position: absolute;
-    z-index: 9999;
     right: -15px;
     top: 50%;
     transform: translateY(-50%);
@@ -41,7 +40,7 @@ export const ScrollWrapper = styled.div`
     border: 1px solid #ddd;
     display: flex;
     align-items: center;
-    z-index: 999;
+    z-index: 3;
     justify-content: center;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.18);
     background-color: rgba(0, 0, 0, 0.2);

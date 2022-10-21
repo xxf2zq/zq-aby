@@ -3,6 +3,7 @@ import HomeBanner from './c-cpns/home-banner'
 
 import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 import { fetchhomeDataAction } from '@/store/modules/home'
+import { changeheaderConfigAction } from '@/store/modules/main'
 
 import { HomeWrapper } from './style'
 import { AppDispatch } from '@/store'
@@ -21,6 +22,7 @@ const index = memo(() => {
   const dispatch = useDispatch<AppDispatch>()
   useEffect(() => {
     dispatch(fetchhomeDataAction('fetchdata'))
+    dispatch(changeheaderConfigAction({ isFixed: true, topAlpha: true }))
   }, [])
 
   const {

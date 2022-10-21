@@ -125,8 +125,15 @@ interface IItem {
 interface IDetail {
   itemobj: IItem
 }
+interface IMain {
+  headerConfig: {
+    isFixed: boolean
+    topAlpha: boolean
+  }
+}
 export interface IStoreState {
   home: IHome
   all: IAll
   detail: IDetail
+  main: IMain
 }

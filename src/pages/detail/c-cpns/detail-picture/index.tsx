@@ -16,14 +16,14 @@ const index = memo((props: IProps) => {
     <DetailPictureWrapper>
       <div className="pictures">
         <div className="left">
-          <img src={picurls[0]} alt="" />
+          <img src={picurls[0]} alt="" onClick={() => setshowpic(true)} />
           <div className="cover"></div>
         </div>
         <div className="right">
           {picurls.slice(1, 5).map((sitem, index) => {
             return (
               <div className="item" key={index}>
-                <img src={sitem} />
+                <img src={sitem} onClick={() => setshowpic(true)} alt="" />
                 <div className="cover"></div>
               </div>
             )

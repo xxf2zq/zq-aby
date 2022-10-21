@@ -64,8 +64,8 @@ export const BrowerPictureWrapper = styled.div<{ showlist: boolean }>`
     .list {
       width: 100%;
       margin-top: 10px;
-      height: ${(props) => (props.showlist ? '67px' : '0px')};
       overflow: hidden;
+      height: ${(props) => (props.showlist ? '67px' : '0px')};
       user-select: none;
       .item {
         width: 67px;
@@ -78,6 +78,23 @@ export const BrowerPictureWrapper = styled.div<{ showlist: boolean }>`
       }
       .active {
         opacity: 1;
+      }
+      .zq-enter,
+      .zq-exit-done,
+      .zq-appear {
+        opacity: 0;
+      }
+      .zq-enter-active,
+      .zq-appear-active {
+        opacity: 1;
+        transition: all 200ms ease;
+      }
+      .zq-exit {
+        opacity: 1;
+      }
+      .zq-exit-active {
+        opacity: 0;
+        transition: all 300ms ease;
       }
     }
   }

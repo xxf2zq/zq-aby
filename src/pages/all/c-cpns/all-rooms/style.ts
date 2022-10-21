@@ -3,7 +3,9 @@ import styled from 'styled-components'
 export const AllRoomsWrapper = styled.div`
   padding: 20px;
   position: relative;
+  margin-top: 80px;
   h2 {
+    margin-top: 20px;
     margin-left: 20px;
     font-weight: 700;
     font-size: 22px;
